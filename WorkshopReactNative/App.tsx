@@ -13,43 +13,27 @@ import { Button, TextInput, TouchableOpacity } from 'react-native';
 import { View, Text, StyleSheet } from 'react-native';
 import { CustomButton } from './Component/button/button';
 
-const Profile= ({ route }) => {
-  const { name, age, email } = route.params;
+// const Profile= ({ route }) => {
+//   const { name, age, email } = route.params;
 
-  return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Profile</Text>
-      <View style={styles.profileInfo}>
-        <Text style={styles.label}>Name:</Text>
-        <Text>{name}</Text>
-      </View>
-      <View style={styles.profileInfo}>
-        <Text style={styles.label}>Age:</Text>
-        <Text>{age}</Text>
-      </View>
-        <Text style={styles.label}>Email:</Text>
-        <Text>{email}</Text>
-    </View>
-  );
-};
+//   return (
+//     <View style={styles.container}>
+//       <Text style={styles.title}>Profile</Text>
+//       <View style={styles.profileInfo}>
+//         <Text style={styles.label}>Name:</Text>
+//         <Text>{name}</Text>
+//       </View>
+//       <View style={styles.profileInfo}>
+//         <Text style={styles.label}>Age:</Text>
+//         <Text>{age}</Text>
+//       </View>
+//         <Text style={styles.label}>Email:</Text>
+//         <Text>{email}</Text>
+//     </View>
+//   );
+// };
 
 
-const Stack = createNativeStackNavigator();
-
-const MyStack = () => {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="Home"
-          component={App}
-          options={{title: 'Welcome'}}
-        />
-        <Stack.Screen name="Profile" component={Profile} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-};
 
 
 function ButtonValider() {
@@ -66,15 +50,15 @@ const App = () => {
       <View>
       <TextInput
         style={{
-        height: 40,
-        margin: 12,
-        borderWidth: 1,
-        padding: 10,
+          height: 40,
+          margin: 12,
+          borderWidth: 1,
+          padding: 10,
         }}
-      />
+        />
     </View>
       <View style={{width: 100, height: 40, alignItems: 'center', marginLeft: 160}}>
-        <TouchableOpacity onPress={() => navigation.navigate("Profile")} style={styles.button}>
+        <TouchableOpacity  style={styles.button}>
           <Text style={{fontSize: 10}}>Valider</Text>
         </TouchableOpacity>
         <CustomButton title={"accolade"}/>
@@ -83,6 +67,22 @@ const App = () => {
   )
 }
 
+const Stack = createNativeStackNavigator();
+
+const MyStack = () => {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Home"
+          component={App}
+          options={{title: 'Welcome'}}
+        />
+        {/* <Stack.Screen name="Profile" component={Profile} /> */}
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+};
 
 const styles = StyleSheet.create({
   sectionContainer: {
